@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delft rental shortlist — map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+    #map { height: 100%; }
+    .legend, .info-box {
+      background: #fff; padding: 8px 10px; border-radius: 6px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.3); font-size: 13px; line-height: 1.5;
+    }
+    .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .info-box { max-width: 260px; }
+    .popup b { font-size: 14px; }
+    .popup .meta { color: #444; }
+    .popup a { color: #1a6; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const TU = [52.0022, 4.3736];
+    // type: room | flat | borderline.  coords are STREET-LEVEL APPROXIMATE.
+    const listings = [
+      { name: "Prof. Telderslaan", type: "room", pos: [52.0015, 4.3475], rent: "€500 incl.", size: "10 m²", ppm: "€50/m²", avail: "26 May 2026 · indefinite", note: "Male 20–99, working ok; cheapest", url: "https://kamernet.nl/en/for-rent/room-delft/prof-telderslaan/room-2379139" },
+      { name: "Israellaan", type: "room", pos: [52.0035, 4.3445], rent: "€695 (+€85) incl.", size: "12 m²", ppm: "€58/m²", avail: "21 May 2026 · indefinite", note: "Mixed gender 16–99", url: "https://kamernet.nl/en/for-rent/room-delft/israellaan/room-2377929" },
+      { name: "Pijperring", type: "room", pos: [52.0085, 4.3415], rent: "€800 incl.", size: "12 m²", ppm: "€67/m²", avail: "1 Jul 2026 · to 31 Jan 2027", note: "Any gender 18–30; tram at door", url: "https://kamernet.nl/en/for-rent/room-delft/pijperring/room-2383669" },
+      { name: "Lijsterbeslaan", type: "room", pos: [52.0175, 4.3475], rent: "€800 incl.", size: "20 m²", ppm: "€40/m²", avail: "1 Jul 2026 · min 6 mo", note: "Male 16–38; biggest budget room; energy A", url: "https://kamernet.nl/en/for-rent/room-delft/lijsterbeslaan/room-2381085" },
+      { name: "Herman Gorterhof", type: "room", pos: [51.9975, 4.3525], rent: "€850 incl.", size: "12 m²", ppm: "€71/m²", avail: "1 Jul 2026 · 2 yr+", note: "Male, no age cap; all-male student house", url: "https://kamernet.nl/en/for-rent/room-delft/herman-gorterhof/room-2385617" },
+      { name: "Hendrik Tollensstraat", type: "borderline", pos: [52.0025, 4.3465], rent: "€900 incl.", size: "14 m²", ppm: "€64/m²", avail: "1 Aug 2026 · min 3 mo", note: "Age 16–35 fits but PREFERS FEMALE", url: "https://kamernet.nl/en/for-rent/room-delft/hendrik-tollensstraat/room-2384629" },
+      { name: "Vlamingstraat", type: "flat", pos: [52.0125, 4.3625], rent: "€1,300 excl.", size: "50 m²", ppm: "€26/m²", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; not master students (PhD ok)", url: "https://www.pararius.com/apartment-for-rent/delft/7b78e52b/vlamingstraat" },
+      { name: "Oude Delft", type: "flat", pos: [52.0065, 4.3565], rent: "€1,350 incl.", size: "33 m²", ppm: "€41/m²", avail: "By arrangement · max 24 mo", note: "Whole flat, canal view, utilities incl.", url: "https://www.pararius.com/apartment-for-rent/delft/70f5f594/oude-delft" },
+      { name: "Kloksteeg", type: "flat", pos: [52.0115, 4.3565], rent: "€1,372 incl.", size: "40 m²", ppm: "€34/m²", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; students/Master/PhD", url: "https://www.pararius.com/apartment-for-rent/delft/b15e92fd/kloksteeg" },
+      { name: "Mercuriusweg 65", type: "flat", pos: [52.0045, 4.3435], rent: "€1,600 (+€60) excl.", size: "62 m²", ppm: "€26/m²", avail: "1 Aug 2026 · indefinite", note: "Biggest/newest (2020), A+, unfurnished, parking", url: "https://www.pararius.com/apartment-for-rent/delft/2118d9d1/mercuriusweg" },
+    ];
+
+    const colors = { room: "#2a7de1", flat: "#1aa05a", borderline: "#e8902a" };
+
+    const map = L.map("map").setView([52.006, 4.355], 14);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19, attribution: "© OpenStreetMap contributors"
+    }).addTo(map);
+
+    function dot(color) {
+      return L.divIcon({
+        className: "",
+        html: `<div style="width:18px;height:18px;background:${color};border:2px solid #fff;border-radius:50%;box-shadow:0 0 3px rgba(0,0,0,.5)"></div>`,
+        iconSize: [18, 18], iconAnchor: [9, 9]
+      });
+    }
+
+    const bounds = [TU];
+    listings.forEach(l => {
+      bounds.push(l.pos);
+      L.marker(l.pos, { icon: dot(colors[l.type]) }).addTo(map).bindPopup(
+        `<div class="popup"><b>${l.name}</b><br>
+         <span class="meta">${l.rent} · ${l.size} · ${l.ppm}<br>
+         ${l.avail}<br>${l.note}</span><br>
+         <a href="${l.url}" target="_blank">Open listing ↗</a></div>`
+      );
+    });
+
+    // TU Delft marker (red star)
+    L.marker(TU, { icon: L.divIcon({
+      className: "",
+      html: `<div style="font-size:26px;line-height:26px;color:#d23;text-shadow:0 0 3px #fff">★</div>`,
+      iconSize: [26, 26], iconAnchor: [13, 13]
+    })}).addTo(map).bindPopup("<b>TU Delft</b> (campus)");
+
+    map.fitBounds(bounds, { padding: [40, 40] });
+
+    // Legend
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = () => {
+      const d = L.DomUtil.create("div", "legend");
+      d.innerHTML =
+        `<b>Delft shortlist</b><br>
+         <i style="background:${colors.room}"></i> Room (fits)<br>
+         <i style="background:${colors.flat}"></i> Whole flat<br>
+         <i style="background:${colors.borderline}"></i> Borderline (female pref)<br>
+         <span style="color:#d23">★</span> TU Delft`;
+      return d;
+    };
+    legend.addTo(map);
+
+    // Disclaimer
+    const info = L.control({ position: "topright" });
+    info.onAdd = () => {
+      const d = L.DomUtil.create("div", "info-box");
+      d.innerHTML = "Pin positions are <b>street-level approximate</b> (exact house numbers aren't in most listings). Use for neighbourhood / distance-to-campus only.";
+      return d;
+    };
+    info.addTo(map);
+  </script>
+</body>
+</html>
