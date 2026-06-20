@@ -2,7 +2,7 @@
 
 Compared on 2026-06-20. Individual markdown files are in this folder.
 
-## Comparison table (Kamernet — 9 listings successfully downloaded)
+## Comparison table
 
 | # | Address | Type | Rent/mo | Utilities | Deposit | Area | Furnished | Available | Period | Housemates | Energy | Pets | Gender pref | Age |
 |---|---------|------|--------:|-----------|--------:|-----:|-----------|-----------|--------|-----------|:------:|:----:|:-----------:|-----|
@@ -15,29 +15,31 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 | 7 | Jacoba van Beierenlaan | Room | **€330** | incl. | — | 16 m² | Yes | 17 Jun 26 – 1 Jan 27 | sublet | 8+ (M) | ? | No | Male | 18–23 |
 | 8 | Hendrik Tollensstraat (…629) | Room | €900 | incl. | — | 14 m² | Yes | 1 Aug 26 | 3 mo+ | 2 (mixed) | E | No | Female | 16–35 |
 | 9 | Julianalaan | **Studio** | €1,000 | **excl.** (+€50 svc) | €2,000 | 32 m² | Yes | 17 Jul 26 – 31 Dec 27 | 1.5 yr | 1 (private) | A+++ | No | Female | 18–30 |
+| 10 | Vlamingstraat (Pararius) | **Flat** | €1,300§ | **excl.** | €1,900 | 50 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Singles/couples (no students) | — |
 
 \* 76 m² likely refers to the whole apartment, not the room.
 † Listing labels it "unfurnished" but the description says "furnished" — ambiguous.
 ‡ Deposit shown as €85, almost certainly a typo for €850.
+§ Header/table say €1,300; description text says €1,200. Built 1800, ground floor, view over canal.
 
-## Pararius — 4 listings NOT downloaded
+## Pararius — 3 listings still NOT downloaded
 
 | # | Address | Status |
 |---|---------|--------|
-| 10 | Vlamingstraat | ❌ Blocked (Cloudflare 403) |
-| 11 | Kloksteeg | ❌ Blocked (Cloudflare 403) |
-| 12 | Mercuriusweg | ❌ Blocked (Cloudflare 403) |
-| 13 | Oude Delft | ❌ Blocked (Cloudflare 403) |
+| 11 | Kloksteeg | ❌ Blocked (Cloudflare 403) — paste page text to add |
+| 12 | Mercuriusweg | ❌ Blocked (Cloudflare 403) — paste page text to add |
+| 13 | Oude Delft | ❌ Blocked (Cloudflare 403) — paste page text to add |
 
 Pararius is protected by a Cloudflare "Just a moment" JavaScript challenge. Both the WebFetch
-tool and curl (with a real browser user-agent) receive HTTP 403, so these pages could not be
-extracted automatically from this sandbox.
+tool and curl (with a real browser user-agent) receive HTTP 403, so these pages cannot be
+extracted automatically from this sandbox — paste the page text (as done for Vlamingstraat) to add them.
 
-## Quick takeaways (Kamernet only)
+## Quick takeaways
 
 - **Cheapest:** Jacoba van Beierenlaan — €330/mo, but a very large (16+ roommate) party-style student house, short sublet.
+- **Most expensive overall:** Vlamingstraat flat — €1,300/mo *excl.* utilities (whole apartment, no students).
 - **Most expensive room:** Trompetstraat — €1,175/mo *excl.* utilities.
-- **Only self-contained unit:** Julianalaan studio — €1,000 + €50 service (excl. utilities), private kitchen/bathroom, top A+++ energy label.
+- **Self-contained units:** Julianalaan studio (€1,000 + €50 svc, A+++) and Vlamingstraat flat (€1,300, own canal-view apartment) — the only options without housemates.
 - **Best value furnished room (incl. utilities):** Lange Geer (€600) and Lijsterbeslaan (€800, energy A) stand out.
 - **Longest commitment:** Herman Gorterhof (2 years+) and Julianalaan (up to 1.5 years).
 - **Gender skew:** 5 prefer male, 2 prefer female, 1 mixed-female, 1 any.
