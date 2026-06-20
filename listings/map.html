@@ -23,19 +23,19 @@
   <div id="map"></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const TU = [52.0022, 4.3736];
-    // type: room | flat | borderline.  coords are STREET-LEVEL APPROXIMATE.
+    const TU = [51.9988274, 4.3739604];
+    // type: room | flat | borderline.  Coords geocoded via OpenStreetMap Nominatim (street-level).
     const listings = [
-      { name: "Prof. Telderslaan", type: "room", pos: [52.0015, 4.3475], rent: "€500 incl.", size: "10 m²", ppm: "€50/m²", avail: "26 May 2026 · indefinite", note: "Male 20–99, working ok; cheapest", url: "https://kamernet.nl/en/for-rent/room-delft/prof-telderslaan/room-2379139" },
-      { name: "Israellaan", type: "room", pos: [52.0035, 4.3445], rent: "€695 (+€85) incl.", size: "12 m²", ppm: "€58/m²", avail: "21 May 2026 · indefinite", note: "Mixed gender 16–99", url: "https://kamernet.nl/en/for-rent/room-delft/israellaan/room-2377929" },
-      { name: "Pijperring", type: "room", pos: [52.0085, 4.3415], rent: "€800 incl.", size: "12 m²", ppm: "€67/m²", avail: "1 Jul 2026 · to 31 Jan 2027", note: "Any gender 18–30; tram at door", url: "https://kamernet.nl/en/for-rent/room-delft/pijperring/room-2383669" },
-      { name: "Lijsterbeslaan", type: "room", pos: [52.0175, 4.3475], rent: "€800 incl.", size: "20 m²", ppm: "€40/m²", avail: "1 Jul 2026 · min 6 mo", note: "Male 16–38; biggest budget room; energy A", url: "https://kamernet.nl/en/for-rent/room-delft/lijsterbeslaan/room-2381085" },
-      { name: "Herman Gorterhof", type: "room", pos: [51.9975, 4.3525], rent: "€850 incl.", size: "12 m²", ppm: "€71/m²", avail: "1 Jul 2026 · 2 yr+", note: "Male, no age cap; all-male student house", url: "https://kamernet.nl/en/for-rent/room-delft/herman-gorterhof/room-2385617" },
-      { name: "Hendrik Tollensstraat", type: "borderline", pos: [52.0025, 4.3465], rent: "€900 incl.", size: "14 m²", ppm: "€64/m²", avail: "1 Aug 2026 · min 3 mo", note: "Age 16–35 fits but PREFERS FEMALE", url: "https://kamernet.nl/en/for-rent/room-delft/hendrik-tollensstraat/room-2384629" },
-      { name: "Vlamingstraat", type: "flat", pos: [52.0125, 4.3625], rent: "€1,300 excl.", size: "50 m²", ppm: "€26/m²", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; not master students (PhD ok)", url: "https://www.pararius.com/apartment-for-rent/delft/7b78e52b/vlamingstraat" },
-      { name: "Oude Delft", type: "flat", pos: [52.0065, 4.3565], rent: "€1,350 incl.", size: "33 m²", ppm: "€41/m²", avail: "By arrangement · max 24 mo", note: "Whole flat, canal view, utilities incl.", url: "https://www.pararius.com/apartment-for-rent/delft/70f5f594/oude-delft" },
-      { name: "Kloksteeg", type: "flat", pos: [52.0115, 4.3565], rent: "€1,372 incl.", size: "40 m²", ppm: "€34/m²", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; students/Master/PhD", url: "https://www.pararius.com/apartment-for-rent/delft/b15e92fd/kloksteeg" },
-      { name: "Mercuriusweg 65", type: "flat", pos: [52.0045, 4.3435], rent: "€1,600 (+€60) excl.", size: "62 m²", ppm: "€26/m²", avail: "1 Aug 2026 · indefinite", note: "Biggest/newest (2020), A+, unfurnished, parking", url: "https://www.pararius.com/apartment-for-rent/delft/2118d9d1/mercuriusweg" },
+      { name: "Prof. Telderslaan", type: "room", pos: [52.0035470, 4.3799870], rent: "€500 incl.", size: "10 m²", ppm: "€50/m²", bike: "~4 min", avail: "26 May 2026 · indefinite", note: "Male 20–99, working ok; cheapest", url: "https://kamernet.nl/en/for-rent/room-delft/prof-telderslaan/room-2379139" },
+      { name: "Israellaan", type: "room", pos: [51.9802158, 4.3461742], rent: "€695 (+€85) incl.", size: "12 m²", ppm: "€58/m²", bike: "~14 min", avail: "21 May 2026 · indefinite", note: "Mixed gender 16–99; far south (Tanthof)", url: "https://kamernet.nl/en/for-rent/room-delft/israellaan/room-2377929" },
+      { name: "Pijperring", type: "room", pos: [51.9921282, 4.3481326], rent: "€800 incl.", size: "12 m²", ppm: "€67/m²", bike: "~10 min", avail: "1 Jul 2026 · to 31 Jan 2027", note: "Any gender 18–30; tram at door", url: "https://kamernet.nl/en/for-rent/room-delft/pijperring/room-2383669" },
+      { name: "Lijsterbeslaan", type: "room", pos: [52.0189788, 4.3658104], rent: "€800 incl.", size: "20 m²", ppm: "€40/m²", bike: "~12 min", avail: "1 Jul 2026 · min 6 mo", note: "Male 16–38; biggest budget room; energy A", url: "https://kamernet.nl/en/for-rent/room-delft/lijsterbeslaan/room-2381085" },
+      { name: "Herman Gorterhof", type: "room", pos: [51.9932261, 4.3571004], rent: "€850 incl.", size: "12 m²", ppm: "€71/m²", bike: "~7 min", avail: "1 Jul 2026 · 2 yr+", note: "Male, no age cap; all-male student house", url: "https://kamernet.nl/en/for-rent/room-delft/herman-gorterhof/room-2385617" },
+      { name: "Hendrik Tollensstraat", type: "borderline", pos: [51.9963817, 4.3558223], rent: "€900 incl.", size: "14 m²", ppm: "€64/m²", bike: "~7 min", avail: "1 Aug 2026 · min 3 mo", note: "Age 16–35 fits but PREFERS FEMALE", url: "https://kamernet.nl/en/for-rent/room-delft/hendrik-tollensstraat/room-2384629" },
+      { name: "Vlamingstraat", type: "flat", pos: [52.0136304, 4.3621599], rent: "€1,300 excl.", size: "50 m²", ppm: "€26/m²", bike: "~9 min", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; not master students (PhD ok)", url: "https://www.pararius.com/apartment-for-rent/delft/7b78e52b/vlamingstraat" },
+      { name: "Oude Delft", type: "flat", pos: [52.0105869, 4.3568107], rent: "€1,350 incl.", size: "33 m²", ppm: "€41/m²", bike: "~8 min", avail: "By arrangement · max 24 mo", note: "Whole flat, canal view, utilities incl.", url: "https://www.pararius.com/apartment-for-rent/delft/70f5f594/oude-delft" },
+      { name: "Kloksteeg", type: "flat", pos: [52.0101472, 4.3561172], rent: "€1,372 incl.", size: "40 m²", ppm: "€34/m²", bike: "~9 min", avail: "Immediately · max 24 mo", note: "Whole flat, canal view; students/Master/PhD", url: "https://www.pararius.com/apartment-for-rent/delft/b15e92fd/kloksteeg" },
+      { name: "Mercuriusweg 65", type: "flat", pos: [51.9997125, 4.3568347], rent: "€1,600 (+€60) excl.", size: "62 m²", ppm: "€26/m²", bike: "~6 min", avail: "1 Aug 2026 · indefinite", note: "Biggest/newest (2020), A+, unfurnished, parking", url: "https://www.pararius.com/apartment-for-rent/delft/2118d9d1/mercuriusweg" },
     ];
 
     const colors = { room: "#2a7de1", flat: "#1aa05a", borderline: "#e8902a" };
@@ -59,6 +59,7 @@
       L.marker(l.pos, { icon: dot(colors[l.type]) }).addTo(map).bindPopup(
         `<div class="popup"><b>${l.name}</b><br>
          <span class="meta">${l.rent} · ${l.size} · ${l.ppm}<br>
+         🚲 ${l.bike} to TU Delft<br>
          ${l.avail}<br>${l.note}</span><br>
          <a href="${l.url}" target="_blank">Open listing ↗</a></div>`
       );
@@ -91,7 +92,7 @@
     const info = L.control({ position: "topright" });
     info.onAdd = () => {
       const d = L.DomUtil.create("div", "info-box");
-      d.innerHTML = "Pin positions are <b>street-level approximate</b> (exact house numbers aren't in most listings). Use for neighbourhood / distance-to-campus only.";
+      d.innerHTML = "Pins geocoded (OpenStreetMap) at <b>street level</b> — exact house numbers aren't in most listings, so treat as approximate. Bike times are straight-line estimates.";
       return d;
     };
     info.addTo(map);
