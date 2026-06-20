@@ -19,6 +19,7 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 | 11 | Kloksteeg (Pararius) | **Flat** | €1,372¶ | incl. | €2,200 | 40 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Students / Master / PhD | — |
 | 12 | Mercuriusweg 65 (Pararius) | **Flat** | €1,600 (+€60 svc = €1,660) | **excl.** | €1,660 | 62 m² | **No** | 1 Aug 26 | indef., min 12 mo | 0 (whole flat) | A+ | — | Income 3× rent; private parking | — |
 | 13 | Oude Delft (Pararius) | **Flat** | €1,350 | incl. | €2,000 | 33 m² | Yes | In consultation | max 24 mo | 0 (whole flat) | — | No | Singles/couples; no master students (PhD ok) | — |
+| 14 | Roland Holstlaan | Room | €900 | incl. | €1,800 | 12 m² | Yes | 1 Jul 26 | indef. (2 yr+) | 1 (M) | C | No | Male | 18–22 |
 
 \* 76 m² likely refers to the whole apartment, not the room.
 † Listing labels it "unfurnished" but the description says "furnished" — ambiguous.
