@@ -16,17 +16,18 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 | 8 | Hendrik Tollensstraat (…629) | Room | €900 | incl. | — | 14 m² | Yes | 1 Aug 26 | 3 mo+ | 2 (mixed) | E | No | Female | 16–35 |
 | 9 | Julianalaan | **Studio** | €1,000 | **excl.** (+€50 svc) | €2,000 | 32 m² | Yes | 17 Jul 26 – 31 Dec 27 | 1.5 yr | 1 (private) | A+++ | No | Female | 18–30 |
 | 10 | Vlamingstraat (Pararius) | **Flat** | €1,300§ | **excl.** | €1,900 | 50 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Singles/couples (no students) | — |
+| 11 | Kloksteeg (Pararius) | **Flat** | €1,372¶ | incl. | €2,200 | 40 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Students / Master / PhD | — |
 
 \* 76 m² likely refers to the whole apartment, not the room.
 † Listing labels it "unfurnished" but the description says "furnished" — ambiguous.
 ‡ Deposit shown as €85, almost certainly a typo for €850.
 § Header/table say €1,300; description text says €1,200. Built 1800, ground floor, view over canal.
+¶ Header/table say €1,372 (incl. service costs); description text says €1,300 incl. G/W/E. Built 1650, canal view over Oude Delft.
 
-## Pararius — 3 listings still NOT downloaded
+## Pararius — 2 listings still NOT downloaded
 
 | # | Address | Status |
 |---|---------|--------|
-| 11 | Kloksteeg | ❌ Blocked (Cloudflare 403) — paste page text to add |
 | 12 | Mercuriusweg | ❌ Blocked (Cloudflare 403) — paste page text to add |
 | 13 | Oude Delft | ❌ Blocked (Cloudflare 403) — paste page text to add |
 
