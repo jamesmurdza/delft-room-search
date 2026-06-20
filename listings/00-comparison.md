@@ -23,6 +23,7 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 | 15 | Zairestraat | Room | €600 | **excl.** | €50 | 30 m² | No | 6 Jul 26 | indef. | 5 (3M/2F) | ? | No | Female | 18–22 |
 | 16 | Israellaan | Room | €695 (+€85) | incl. | €1,800 | 12 m² | Yes | 21 May 26 | indef. | 1 | ? | No | Mixed | 16–99 |
 | 17 | Derde Werelddreef | Room | €524 (~€350 w/ benefit) | **excl.** | — | 20 m² | No | 1 Jul 26 | indef. | 3 | C | **Yes** | Any | 18–25 |
+| 18 | Prof. Telderslaan | Room | €500 | incl. | €500 | 10 m² | Yes | 26 May 26 | indef. | 2 (M) | ? | No | Male | 20–99 |
 
 \* 76 m² likely refers to the whole apartment, not the room.
 † Listing labels it "unfurnished" but the description says "furnished" — ambiguous.
