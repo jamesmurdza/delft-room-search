@@ -18,6 +18,7 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 | 10 | Vlamingstraat (Pararius) | **Flat** | €1,300§ | **excl.** | €1,900 | 50 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Singles/couples (no students) | — |
 | 11 | Kloksteeg (Pararius) | **Flat** | €1,372¶ | incl. | €2,200 | 40 m² | Yes | Immediately | max 24 mo | 0 (whole flat) | — | No | Students / Master / PhD | — |
 | 12 | Mercuriusweg 65 (Pararius) | **Flat** | €1,600 (+€60 svc = €1,660) | **excl.** | €1,660 | 62 m² | **No** | 1 Aug 26 | indef., min 12 mo | 0 (whole flat) | A+ | — | Income 3× rent; private parking | — |
+| 13 | Oude Delft (Pararius) | **Flat** | €1,350 | incl. | €2,000 | 33 m² | Yes | In consultation | max 24 mo | 0 (whole flat) | — | No | Singles/couples; no master students (PhD ok) | — |
 
 \* 76 m² likely refers to the whole apartment, not the room.
 † Listing labels it "unfurnished" but the description says "furnished" — ambiguous.
@@ -25,23 +26,22 @@ Compared on 2026-06-20. Individual markdown files are in this folder.
 § Header/table say €1,300; description text says €1,200. Built 1800, ground floor, view over canal.
 ¶ Header/table say €1,372 (incl. service costs); description text says €1,300 incl. G/W/E. Built 1650, canal view over Oude Delft.
 
-## Pararius — 1 listing still NOT downloaded
-
-| # | Address | Status |
-|---|---------|--------|
-| 13 | Oude Delft | ❌ Blocked (Cloudflare 403) — paste page text to add |
-
-Pararius is protected by a Cloudflare "Just a moment" JavaScript challenge. Both the WebFetch
-tool and curl (with a real browser user-agent) receive HTTP 403, so these pages cannot be
-extracted automatically from this sandbox — paste the page text (as done for Vlamingstraat) to add them.
+> **All 13 listings now captured.** The 4 Pararius flats were originally blocked by a Cloudflare
+> "Just a moment" JavaScript challenge (HTTP 403 to both WebFetch and curl); they were added from
+> page text pasted by the user.
 
 ## Quick takeaways
 
+The set splits into two groups: **Kamernet (1–9)** = mostly student rooms in shared houses (plus one studio); **Pararius (10–13)** = whole self-contained flats, all in the historic centre except Mercuriusweg.
+
 - **Cheapest:** Jacoba van Beierenlaan — €330/mo, but a very large (16+ roommate) party-style student house, short sublet.
-- **Most expensive overall:** Vlamingstraat flat — €1,300/mo *excl.* utilities (whole apartment, no students).
-- **Most expensive room:** Trompetstraat — €1,175/mo *excl.* utilities.
-- **Self-contained units:** Julianalaan studio (€1,000 + €50 svc, A+++) and Vlamingstraat flat (€1,300, own canal-view apartment) — the only options without housemates.
+- **Most expensive:** Mercuriusweg 65 flat — €1,660/mo total *excl.* utilities (newest, largest, A+, but unfurnished).
+- **Most expensive room (not a whole unit):** Trompetstraat — €1,175/mo *excl.* utilities.
+- **Self-contained units (no housemates):** the Julianalaan studio + all four Pararius flats (Vlamingstraat, Kloksteeg, Mercuriusweg, Oude Delft).
+- **Best value all-inclusive flat:** Oude Delft (€1,350 incl. G/W/E) and Kloksteeg (€1,372 incl.) — central, canal views, utilities covered.
 - **Best value furnished room (incl. utilities):** Lange Geer (€600) and Lijsterbeslaan (€800, energy A) stand out.
-- **Longest commitment:** Herman Gorterhof (2 years+) and Julianalaan (up to 1.5 years).
-- **Gender skew:** 5 prefer male, 2 prefer female, 1 mixed-female, 1 any.
-- Almost all are short-term (≈6-month) furnished sublets aimed at students; **no pets** in any listing.
+- **Best energy efficiency:** Julianalaan studio (A+++), then Mercuriusweg (A+), Lijsterbeslaan (A).
+- **Longest commitment:** Mercuriusweg (indefinite/min 12 mo), Herman Gorterhof (2 years+), Julianalaan (up to 1.5 years); the Pararius flats run up to 24 months.
+- **Student-friendliness:** Kamernet rooms are student-oriented; among flats only **Kloksteeg** welcomes (Master/PhD) students — Vlamingstraat and Oude Delft exclude master students (PhD ok), Mercuriusweg requires income 3× rent.
+- **No pets** in any listing.
+- ⚠️ Each Pararius flat shows a **price/deposit discrepancy** between the headline figure and the description text — see the individual files and table footnotes.
